@@ -1,0 +1,72 @@
+name: Build Elio Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Project-01_ELIO_A rulebased AI chatbot/**"
+      - ".github/workflows/android-apk.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Project-01_ELIO_A rulebased AI chatbot
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: "Project-01_ELIO_A rulebased AI chatbot/package-lock.json"
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build Next.js app
+        run: npm run build
+
+      - name: Check Capacitor configuration
+        run: npx cap --version
+
+      - name: Add Android platform if missing
+        run: |
+          if [ ! -d android ]; then
+            npx cap add android
+          fi
+
+      - name: Sync Capacitor Android
+        run: npx cap sync android
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses > /dev/null || true
+
+      - name: Build debug APK
+        working-directory: Project-01_ELIO_A rulebased AI chatbot/android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Upload Elio APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: elio-android-apk
+          path: "Project-01_ELIO_A rulebased AI chatbot/android/app/build/outputs/apk/debug/app-debug.apk"
+          if-no-files-found: error
+          retention-days: 14
