@@ -126,6 +126,13 @@ export const rules: Rule[] = [
     response: () =>
       "You’re welcome. I’m here whenever you want to inspect another rule.",
   },
+     {
+    id: "maker",
+    category: "Casual",
+    test: (i) => contains(i, ["who made you", "who created you?"]),
+    response: () =>
+      "Tahiya Zareen Hiya created this Rulebased AI Chatbot named-ELIO",
+  },
 ];
 
 export const fallback: ChatResponse = {
