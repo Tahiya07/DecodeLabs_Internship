@@ -58,6 +58,10 @@ jobs:
       - name: Sync Capacitor Android
         run: npx cap sync android
 
+      - name: Make Gradle wrapper executable
+        working-directory: Project-01_ELIO_A rulebased AI chatbot/android
+        run: chmod +x gradlew
+
       - name: Build debug APK
         working-directory: Project-01_ELIO_A rulebased AI chatbot/android
         run: ./gradlew assembleDebug --no-daemon
