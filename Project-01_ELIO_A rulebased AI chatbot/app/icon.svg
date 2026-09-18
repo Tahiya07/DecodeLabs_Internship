@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <rect width="108" height="108" fill="#05070D"/>
+  
+  <!-- Outer glow circles -->
+  <circle cx="54" cy="54" r="34" fill="#1C315F" fill-opacity="0.38"/>
+  <circle cx="54" cy="54" r="27" fill="#324C98" fill-opacity="0.72"/>
+  <circle cx="54" cy="54" r="21" fill="#7A62C9" fill-opacity="0.9"/>
+  <circle cx="54" cy="54" r="15" fill="#B7E8FF"/>
+  <circle cx="54" cy="54" r="11" fill="#122349"/>
+  <circle cx="54" cy="54" r="6" fill="#E9F8FF"/>
+  <circle cx="54" cy="54" r="3.5" fill="#70D7FF"/>
+  
+  <!-- Orbital rings -->
+  <ellipse cx="54" cy="54" rx="22" ry="9" fill="#B7E8FF" fill-opacity="0.76"/>
+  <ellipse cx="54" cy="54" rx="20" ry="7" fill="#05070D"/>
+  <ellipse cx="54" cy="54" rx="9" ry="23" fill="#A491FF" fill-opacity="0.62"/>
+  <ellipse cx="54" cy="54" rx="7" ry="21" fill="#05070D"/>
+  
+  <!-- Accent dots -->
+  <circle cx="79" cy="51" r="2.5" fill="#D8F5FF"/>
+  <circle cx="29" cy="62" r="2" fill="#917DFF"/>
+</svg>

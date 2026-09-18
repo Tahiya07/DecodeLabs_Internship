@@ -1,0 +1,37 @@
+{
+  "name": "elio-rule-based-ai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write \"{app,components,hooks,lib}/**/*.{ts,tsx,css}\" \"*.{ts,mjs,json,md}\"",
+    "format:check": "prettier --check \"{app,components,hooks,lib}/**/*.{ts,tsx,css}\" \"*.{ts,mjs,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "android:sync": "npm run build && npx cap sync android",
+    "android:apk": "npm run android:sync && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.2",
+    "@capacitor/cli": "^7.4.2",
+    "@capacitor/core": "^7.4.2",
+    "framer-motion": "^12.23.12",
+    "next": "^15.5.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@tailwindcss/postcss": "^4.1.13",
+    "eslint": "^9.34.0",
+    "eslint-config-next": "^15.5.2",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  }
+}

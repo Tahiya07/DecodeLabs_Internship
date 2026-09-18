@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Elio</string>
+    <string name="title_activity_main">Elio</string>
+    <string name="package_name">com.elio.rulebasedai</string>
+    <string name="custom_url_scheme">com.elio.rulebasedai</string>
+</resources>
